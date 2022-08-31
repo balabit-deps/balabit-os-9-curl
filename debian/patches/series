@@ -1,0 +1,23 @@
+04_workaround_as_needed_bug.patch
+06_always-disable-valgrind.patch
+08_enable-zsh.patch
+11_omit-directories-from-config.patch
+13_fix-man-formatting.patch
+CVE-2022-22576.patch
+CVE-2022-27774-1.patch
+CVE-2022-27774-2.patch
+CVE-2022-27774-3.patch
+CVE-2022-27775.patch
+CVE-2022-27776.patch
+CVE-2022-27780.patch
+CVE-2022-27781.patch
+CVE-2022-27782.patch
+CVE-2022-32205.patch
+CVE-2022-32206.patch
+CVE-2022-32207.patch
+CVE-2022-32208.patch
+CVE-2022-35252.patch
+
+# do not add patches below
+90_gnutls.patch
+99_nss.patch
