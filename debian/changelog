@@ -1,3 +1,61 @@
+curl (7.81.0-1ubuntu1.8) jammy-security; urgency=medium
+
+  * SECURITY UPDATE: multiple HSTS issues
+    - debian/patches/CVE-2023-23914_5-1.patch: add sharing of HSTS cache
+      among handles in docs/libcurl/opts/CURLSHOPT_SHARE.3,
+      docs/libcurl/symbols-in-versions, include/curl/curl.h, lib/hsts.c,
+      lib/hsts.h, lib/setopt.c, lib/share.c, lib/share.h, lib/transfer.c,
+      lib/url.c, lib/urldata.h.
+    - debian/patches/CVE-2023-23914_5-2.patch: share HSTS between handles
+      in src/tool_operate.c.
+    - debian/patches/CVE-2023-23914_5-3.patch: handle adding the same host
+      name again in lib/hsts.c.
+    - debian/patches/CVE-2023-23914_5-4.patch: support crlf="yes" for
+      verify/proxy in tests/FILEFORMAT.md, tests/runtests.pl.
+    - debian/patches/CVE-2023-23914_5-5.patch: verify hsts with two URLs in
+      tests/data/Makefile.inc, tests/data/test446.
+    - CVE-2023-23914
+    - CVE-2023-23915
+  * SECURITY UPDATE: HTTP multi-header compression denial of service
+    - debian/patches/CVE-2023-23916-pre1.patch: do CRLF replacements in
+      tests/FILEFORMAT.md, tests/data/test1, tests/runtests.pl.
+    - debian/patches/CVE-2023-23916.patch: do not reset stage counter for
+      each header in lib/content_encoding.c, lib/urldata.h,
+      tests/data/Makefile.inc, tests/data/test418.
+    - CVE-2023-23916
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Wed, 15 Feb 2023 08:20:05 -0500
+
+curl (7.81.0-1ubuntu1.7) jammy-security; urgency=medium
+
+  * SECURITY UPDATE: Another HSTS bypass via IDN
+    - debian/patches/CVE-2022-43551.patch: use the IDN decoded name in HSTS
+      checks in lib/http.c.
+    - CVE-2022-43551
+  * SECURITY UPDATE: HTTP Proxy deny use-after-free
+    - debian/patches/CVE-2022-43552.patch: do not free the protocol struct
+      in *_done() in lib/smb.c, lib/telnet.c.
+    - CVE-2022-43552
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Wed, 04 Jan 2023 09:53:07 -0500
+
+curl (7.81.0-1ubuntu1.6) jammy-security; urgency=medium
+
+  * SECURITY UPDATE: POST following PUT confusion
+    - debian/patches/CVE-2022-32221.patch: when POST is set, reset the
+      'upload' field in lib/setopt.c.
+    - CVE-2022-32221
+  * SECURITY UPDATE: HTTP proxy double-free
+    - debian/patches/CVE-2022-42915.patch: restore the protocol pointer on
+      error in lib/http_proxy.c, lib/url.c.
+    - CVE-2022-42915
+  * SECURITY UPDATE: HSTS bypass via IDN
+    - debian/patches/CVE-2022-42916.patch: use IDN decoded names for HSTS
+      checks in lib/url.c.
+    - CVE-2022-42916
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Tue, 18 Oct 2022 12:35:33 -0400
+
 curl (7.81.0-1ubuntu1.4) jammy-security; urgency=medium
 
   * SECURITY UPDATE: when curl sends back cookies with control bytes a
