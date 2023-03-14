@@ -1,3 +1,33 @@
+curl (7.81.0-1ubuntu1.10) jammy-security; urgency=medium
+
+  * SECURITY UPDATE: TELNET option IAC injection
+    - debian/patches/CVE-2023-27533.patch: only accept option arguments in
+      ascii in lib/telnet.c.
+    - CVE-2023-27533
+  * SECURITY UPDATE: SFTP path ~ resolving discrepancy
+    - debian/patches/CVE-2023-27534-pre1.patch: do not add '/' if homedir
+      ends with one in lib/curl_path.c.
+    - debian/patches/CVE-2023-27534.patch: create the new path with dynbuf
+      in lib/curl_path.c.
+    - CVE-2023-27534
+  * SECURITY UPDATE: FTP too eager connection reuse
+    - debian/patches/CVE-2023-27535-pre1.patch: add and use Curl_timestrcmp
+      in lib/netrc.c, lib/strcase.c, lib/strcase.h, lib/url.c,
+      lib/vauth/digest_sspi.c, lib/vtls/vtls.c.
+    - debian/patches/CVE-2023-27535.patch: add more conditions for
+      connection reuse in lib/ftp.c, lib/ftp.h, lib/url.c, lib/urldata.h.
+    - CVE-2023-27535
+  * SECURITY UPDATE: GSS delegation too eager connection re-use
+    - debian/patches/CVE-2023-27536.patch: only reuse connections with same
+      GSS delegation in lib/url.c, lib/urldata.h.
+    - CVE-2023-27536
+  * SECURITY UPDATE: SSH connection too eager reuse still
+    - debian/patches/CVE-2023-27538.patch: fix the SSH connection reuse
+      check in lib/url.c.
+    - CVE-2023-27538
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Tue, 14 Mar 2023 12:37:02 -0400
+
 curl (7.81.0-1ubuntu1.8) jammy-security; urgency=medium
 
   * SECURITY UPDATE: multiple HSTS issues
