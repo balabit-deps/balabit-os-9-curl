@@ -1,3 +1,15 @@
+curl (7.81.0-1ubuntu1.17) jammy-security; urgency=medium
+
+  * SECURITY UPDATE: ASN.1 date parser overread
+    - debian/patches/CVE-2024-7264-pre1.patch: clean up GTime2str in
+      lib/x509asn1.c.
+    - debian/patches/CVE-2024-7264.patch: unittests and fixes for gtime2str
+      in lib/x509asn1.c, lib/x509asn1.h, tests/data/Makefile.inc,
+      tests/data/test1656, tests/unit/Makefile.inc, tests/unit/unit1656.c.
+    - CVE-2024-7264
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Thu, 01 Aug 2024 09:51:30 -0400
+
 curl (7.81.0-1ubuntu1.16) jammy-security; urgency=medium
 
   * SECURITY UPDATE: HTTP/2 push headers memory-leak
