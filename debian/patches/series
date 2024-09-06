@@ -44,6 +44,7 @@ CVE-2023-46218.patch
 CVE-2024-2398.patch
 CVE-2024-7264-pre1.patch
 CVE-2024-7264.patch
+CVE-2024-8096.patch
 
 # do not add patches below
 90_gnutls.patch
