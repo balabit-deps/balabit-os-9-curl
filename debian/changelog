@@ -1,3 +1,12 @@
+curl (7.81.0-1ubuntu1.19) jammy-security; urgency=medium
+
+  * SECURITY UPDATE: HSTS expiry overwrites parent cache entry.
+    - debian/patches/CVE-2024-9681.patch: Add bestsub, blen, and hostname
+      comparison in lib/hsts.c.
+    - CVE-2024-9681
+
+ -- Hlib Korzhynskyy <hlib.korzhynskyy@canonical.com>  Wed, 06 Nov 2024 10:54:59 -0330
+
 curl (7.81.0-1ubuntu1.18) jammy-security; urgency=medium
 
   * SECURITY UPDATE: OCSP stapling bypass with GnuTLS
