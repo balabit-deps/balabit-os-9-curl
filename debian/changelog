@@ -1,3 +1,17 @@
+curl (7.81.0-1ubuntu1.20) jammy-security; urgency=medium
+
+  * SECURITY UPDATE: netrc and redirect credential leak
+    - debian/patches/CVE-2024-11053-pre1.patch: use same credentials on
+      redirect in lib/transfer.c, lib/url.c, lib/urldata.h,
+      tests/data/Makefile.inc, tests/data/test998, tests/data/test999.
+    - debian/patches/CVE-2024-11053.patch: address several netrc parser
+      flaws in lib/netrc.c, lib/url.c, tests/data/Makefile.inc,
+      tests/data/test478, tests/data/test479, tests/data/test480,
+      tests/unit/unit1304.c, tests/data/DISABLED.
+    - CVE-2024-11053
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Wed, 11 Dec 2024 12:26:37 -0500
+
 curl (7.81.0-1ubuntu1.19) jammy-security; urgency=medium
 
   * SECURITY UPDATE: HSTS expiry overwrites parent cache entry.
