@@ -1,3 +1,12 @@
+curl (7.81.0-1ubuntu1.21) jammy-security; urgency=medium
+
+  * SECURITY REGRESSION: incorrect Cookie header field size check
+    (LP: #2118865)
+    - debian/patches/CVE-2022-32205-2.patch: rectify the field size check
+      in lib/http.c.
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Tue, 23 Sep 2025 07:24:37 -0400
+
 curl (7.81.0-1ubuntu1.20) jammy-security; urgency=medium
 
   * SECURITY UPDATE: netrc and redirect credential leak
