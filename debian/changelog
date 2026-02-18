@@ -1,3 +1,24 @@
+curl (7.81.0-1ubuntu1.22) jammy-security; urgency=medium
+
+  * SECURITY UPDATE: multi-threaded TSL options leak
+    - debian/patches/CVE-2025-14017.patch: call ldap_init() before
+    setting the options in lib/ldap.c
+    - CVE-2025-14017
+  * SECURITY UPDATE: bearer token leak on cross-protocol redirect
+    - debian/patches/CVE-2025-14524.patch: if redirected,
+    require permission to use bearer in lib/curl_sasl.c
+    - CVE-2025-14524
+  * SECURITY UPDATE: ssh known_hosts validation bypass
+    - debian/patches/CVE-2025-15079.patch: set both knownhosts
+    options to the same file in lib/vssh/libssh.c
+    - CVE-2025-15079
+  * SECURITY UPDATE: improper local ssh agent authentication
+    - debian/patches/CVE-2025-15224.patch: require private key
+    or user-agent for public key auth in lib/vssh/libssh.c
+    - CVE-2025-15224
+
+ -- Elise Hlady <elise.hlady@canonical.com>  Wed, 18 Feb 2026 13:33:48 -0800
+
 curl (7.81.0-1ubuntu1.21) jammy-security; urgency=medium
 
   * SECURITY REGRESSION: incorrect Cookie header field size check

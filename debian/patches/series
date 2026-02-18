@@ -49,6 +49,10 @@ CVE-2024-9681.patch
 CVE-2024-11053-pre1.patch
 CVE-2024-11053.patch
 CVE-2022-32205-2.patch
+CVE-2025-14017.patch
+CVE-2025-14524.patch
+CVE-2025-15079.patch
+CVE-2025-15224.patch
 
 # do not add patches below
 90_gnutls.patch
