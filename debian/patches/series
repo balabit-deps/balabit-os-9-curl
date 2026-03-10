@@ -53,6 +53,11 @@ CVE-2025-14017.patch
 CVE-2025-14524.patch
 CVE-2025-15079.patch
 CVE-2025-15224.patch
+CVE-2026-1965-1.patch
+CVE-2026-1965-2.patch
+CVE-2026-3783.patch
+CVE-2026-3784.patch
+CVE-2025-0167.patch
 
 # do not add patches below
 90_gnutls.patch

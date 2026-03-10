@@ -1,3 +1,27 @@
+curl (7.81.0-1ubuntu1.23) jammy-security; urgency=medium
+
+  * SECURITY UPDATE: bad reuse of HTTP Negotiate connection
+    - debian/patches/CVE-2026-1965-1.patch: fix reuse of connections using
+      HTTP Negotiate in lib/url.c.
+    - debian/patches/CVE-2026-1965-2.patch: fix copy and paste
+      url_match_auth_nego mistake in lib/url.c.
+    - CVE-2026-1965
+  * SECURITY UPDATE: token leak with redirect and netrc
+    - debian/patches/CVE-2026-3783.patch: only send bearer if auth is
+      allowed in lib/http.c, tests/data/Makefile.inc, tests/data/test2006.
+    - CVE-2026-3783
+  * SECURITY UPDATE: wrong proxy connection reuse with credentials
+    - debian/patches/CVE-2026-3784.patch: add additional tests in
+      lib/url.c.
+    - CVE-2026-3784
+  * SECURITY UPDATE: netrc and default credential leak
+    - debian/patches/CVE-2025-0167.patch: 'default' with no credentials is
+      not a match in lib/netrc.c, tests/data/Makefile.inc,
+      tests/data/test486.
+    - CVE-2025-0167
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Tue, 10 Mar 2026 14:25:36 -0400
+
 curl (7.81.0-1ubuntu1.22) jammy-security; urgency=medium
 
   * SECURITY UPDATE: multi-threaded TSL options leak
