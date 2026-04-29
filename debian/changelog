@@ -1,3 +1,41 @@
+curl (7.81.0-1ubuntu1.24) jammy-security; urgency=medium
+
+  * SECURITY UPDATE: connection reuse ignores TLS requirement
+    - debian/patches/CVE-2026-4873.patch: do not reuse a non-tls starttls
+      connection if new requires TLS in lib/url.c.
+    - CVE-2026-4873
+  * SECURITY UPDATE: wrong reuse of HTTP Negotiate connection
+    - debian/patches/CVE-2026-5545.patch: improve connection reuse on
+      negotiate in lib/url.c.
+    - CVE-2026-5545
+  * SECURITY UPDATE: wrong reuse of SMB connection
+    - debian/patches/CVE-2026-5773.patch: disable connection reuse for
+      SMB(S) in lib/smb.c.
+    - CVE-2026-5773
+  * SECURITY UPDATE: proxy credentials leak over redirect-to proxy
+    - debian/patches/CVE-2026-6253.patch: clear the proxy credentials as
+      well on port or scheme change in lib/transfer.*, tests/*.
+    - CVE-2026-6253
+  * SECURITY UPDATE: stale custom cookie host causes cookie leak
+    - debian/patches/CVE-2026-6276.patch: move cookiehost to struct
+      SingleRequest in lib/http.c, lib/url.c, lib/urldata.h, tests/*.
+    - CVE-2026-6276
+  * SECURITY UPDATE: netrc credential leak with reused proxy connection
+    - debian/patches/CVE-2026-6429-pre1.patch: prevent secure schemes
+      pushed over insecure connections in lib/http2.c.
+    - debian/patches/CVE-2026-6429-pre2.patch: same origin tests in
+      lib/http2.c, lib/urlapi-int.h, lib/urlapi.c.
+    - debian/patches/CVE-2026-6429.patch: clear credentials better on
+      redirect in lib/transfer.c, tests/*.
+    - CVE-2026-6429
+  * SECURITY UPDATE: cross-proxy Digest auth state leak
+    - debian/patches/CVE-2026-7168.patch: clear proxy auth properties when
+      switching in lib/setopt.c, lib/vauth/vauth.h, tests/*.
+    - CVE-2026-7168
+  * debian/rules: run test suite with extra debugging information.
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Wed, 29 Apr 2026 07:35:43 -0400
+
 curl (7.81.0-1ubuntu1.23) jammy-security; urgency=medium
 
   * SECURITY UPDATE: bad reuse of HTTP Negotiate connection

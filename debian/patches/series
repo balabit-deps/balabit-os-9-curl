@@ -58,6 +58,15 @@ CVE-2026-1965-2.patch
 CVE-2026-3783.patch
 CVE-2026-3784.patch
 CVE-2025-0167.patch
+CVE-2026-4873.patch
+CVE-2026-5545.patch
+CVE-2026-5773.patch
+CVE-2026-6253.patch
+CVE-2026-6276.patch
+CVE-2026-6429-pre1.patch
+CVE-2026-6429-pre2.patch
+CVE-2026-6429.patch
+CVE-2026-7168.patch
 
 # do not add patches below
 90_gnutls.patch
