@@ -1,3 +1,34 @@
+curl (7.81.0-1ubuntu1.25) jammy-security; urgency=medium
+
+  * SECURITY UPDATE: Connection reuse for starttls protocols.
+    - debian/patches/CVE-2026-8286.patch: When a connection is tested for
+      reuse in a transfer that may upgrade to TLS (commonly via STARTTLS),
+      the SSL configuration must match the existing connection in lib/url.c
+    - CVE-2026-8286
+  * SECURITY UPDATE: Connection reuse in SASL.
+    - debian/patches/CVE-2026-8458.patch: Fix erroneous connection reuse in
+      in lib/curl_sasl.c, lib/http_negotiate.c, lib/http_ntlm.c, lib/imap.c,
+      lib/openldap.c, and lib/pop3.c
+    - CVE-2026-8458
+  * SECURITY UPDATE: Cookie injection in is_public_suffix.
+    - debian/patches/CVE-2026-8924.patch: Trim trailing dots when checking
+      PSL in lib/cookie.c.
+    - CVE-2026-8924
+  * SECURITY UPDATE: Double-free in gsasl.
+    - debian/patches/CVE-2026-8925.patch: Require libgasl 1.6.0 to handle
+      NULL argument in lib/vauth/gsasl.c.
+    - CVE-2026-8925
+  * SECURITY UPDATE: Information disclosure in libcurl
+    - debian/patches/CVE-2026-8927.patch: Detect if proxy is not the same as
+      previous and flush state in lib/url.c and lib/urldata.h.
+    - CVE-2026-8927
+  * SECURITY UPDATE: Man-in-the-middle in libcurl.
+    - debian/patches/CVE-2026-9547.patch: Reject host key mismatches in
+      in lib/vssh/libssh.c
+    - CVE-2026-9547
+
+ -- Kyle Kernick <kyle.kernick@canonical.com>  Mon, 29 Jun 2026 11:21:28 -0600
+
 curl (7.81.0-1ubuntu1.24) jammy-security; urgency=medium
 
   * SECURITY UPDATE: connection reuse ignores TLS requirement
