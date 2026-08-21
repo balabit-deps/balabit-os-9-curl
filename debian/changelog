@@ -1,3 +1,24 @@
+curl (7.81.0-1ubuntu1.27) jammy-security; urgency=medium
+
+  * SECURITY UPDATE: Authentication Bypass in connection reuse.
+    - debian/patches/CVE-2026-8932.patch: Fix incomplete mTLS config in
+      lib/ldap.c, ../urldata.h, ../url.c, lib/vssh/libssh.c, ../libssh2.c,
+      lib/vtls/gtls.c, ../mbedtls.c, ../openssl.c, ../schannel.c,
+      ../sectransp.c, ../vtls.c, ../nss.c, and ../wolfssl.c.
+    - CVE-2026-8932
+
+ -- Kyle Kernick <kyle.kernick@canonical.com>  Fri, 21 Aug 2026 12:40:03 -0600
+
+curl (7.81.0-1ubuntu1.26) jammy-security; urgency=medium
+
+  * SECURITY UPDATE: Authentication Bypass by Capture-replay
+    - debian/patches/CVE-2026-11856.patch: Flush state on origin or credential
+      change in lib/http_digest.c, lib/urldata.h, lib/vauth/digest.c, and
+      lib/vauth/digest_sspi.c.
+    - CVE-2026-11856
+
+ -- Kyle Kernick <kyle.kernick@canonical.com>  Tue, 18 Aug 2026 16:14:14 -0600
+
 curl (7.81.0-1ubuntu1.25) jammy-security; urgency=medium
 
   * SECURITY UPDATE: Connection reuse for starttls protocols.
