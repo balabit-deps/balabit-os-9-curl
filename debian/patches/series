@@ -75,6 +75,18 @@ CVE-2026-8927.patch
 CVE-2026-9547.patch
 CVE-2026-11856.patch
 CVE-2026-8932.patch
+CVE-2026-18924.patch
+CVE-2026-80230.patch
+CVE-2026-82209.patch
+CVE-2026-86409.patch
+CVE-2026-86414.patch
+CVE-2026-87862.patch
+CVE-2026-87864.patch
+CVE-2026-92388-1.patch
+CVE-2026-92388-2.patch
+CVE-2026-92389.patch
+CVE-2026-92391.patch
+CVE-2026-94266.patch
 
 # do not add patches below
 90_gnutls.patch

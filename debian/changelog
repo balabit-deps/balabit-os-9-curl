@@ -1,3 +1,76 @@
+curl (7.81.0-1ubuntu1.30) jammy-security; urgency=medium
+
+  * SECURITY UPDATE: Information exposure from stale AWS SigV4 authentication.
+    - debian/patches/CVE-2026-86409.patch: clear CURLAUTH_AWS_SIGV4 when
+      CURLOPT_AWS_SIGV4 is set to NULL in lib/setopt.c.
+    - CVE-2026-86409
+  * SECURITY UPDATE: Credential exposure to an HTTP proxy in CONNECT.
+    - debian/patches/CVE-2026-86414.patch: do not react to 401 responses to a
+      CONNECT request in lib/http_proxy.c.
+    - CVE-2026-86414
+  * SECURITY UPDATE: Improper handling of HSTS entries on load.
+    - debian/patches/CVE-2026-87862.patch: match only the exact host, not
+      parent domains, when removing duplicates while loading an HSTS file in
+      lib/hsts.c.
+    - CVE-2026-87862
+  * SECURITY UPDATE: Command injection in IMAP APPEND with CURLOPT_CRLF.
+    - debian/patches/CVE-2026-87864.patch: reject APPEND when CRLF conversion
+      is enabled, as it makes the upload size unknown in lib/imap.c.
+    - CVE-2026-87864
+  * SECURITY UPDATE: Use after free in FTP wildcard matching.
+    - debian/patches/CVE-2026-92388-1.patch: stop overwriting set.write_func
+      and set.out in lib/sendf.c, lib/ftp.h, lib/ftp.c, lib/ftplistparser.c,
+      lib/ftplistparser.h.
+    - debian/patches/CVE-2026-92388-2.patch: only use the list parser in the
+      CURLWC_MATCHING state in lib/ftplistparser.c.
+    - CVE-2026-92388
+  * SECURITY UPDATE: Information exposure from TFTP transfer direction
+    confusion.
+    - debian/patches/CVE-2026-92389.patch: return CURLE_TFTP_ILLEGAL when a
+      server response does not match the transfer direction in lib/tftp.c.
+    - CVE-2026-92389
+  * SECURITY UPDATE: Stack overflow from deeply nested MIME structures.
+    - debian/patches/CVE-2026-92391.patch: free MIME handles non-recursively in
+      curl_mime_free in lib/mime.c.
+    - CVE-2026-92391
+  * SECURITY UPDATE: Credential exposure in CURLINFO_EFFECTIVE_URL.
+    - debian/patches/CVE-2026-94266.patch: return a copy of the URL without
+      credentials for CURLINFO_EFFECTIVE_URL in lib/getinfo.c, lib/transfer.c,
+      lib/url.c, lib/urldata.h.
+    - CVE-2026-94266
+
+ -- Charles Cochran <charles.cochran@canonical.com>  Mon, 12 Oct 2026 18:12:33 -0400
+
+curl (7.81.0-1ubuntu1.29) jammy-security; urgency=medium
+
+  [ Charles Cocharn ]
+  * SECURITY UPDATE: Use after free in HTTP/2 server push.
+    - debian/patches/CVE-2026-18924.patch: make server push transfers
+      inherit share from parent in lib/http2.c.
+    - CVE-2026-18924
+  * SECURITY UPDATE: Public key pinning bypass.
+    - debian/patches/CVE-2026-80230.patch: require server cert if public
+      key pinned in lib/vtls/openssl.c.
+    - CVE-2026-80230
+  * SECURITY UPDATE: Cookie injection for public suffix domains.
+    - debian/patches/CVE-2026-82209.patch: ensure cookies set for an exact
+      PSL domain are host-only in lib/cookie.c, tests/data/Makefile.inc,
+      tests/data/test1136, tests/data/test2318.
+    - CVE-2026-82209
+
+  [ Kyle Kernick ]
+  * SECURITY REGRESSION: checksrc errors and failing test case for
+    CVE-2026-8927 (LP #2167779)
+    - debian/patches/CVE-2026-6429.patch: Fix indentation to fix
+      autopkgtests in lib/transfer.c.
+    - debian/patches/CVE-2026-8458.patch: Wrap long lines and fix
+      indentation to fix autopkgtests in lib/curl_sasl.c.
+    - debian/patches/CVE-2026-8932.patch: Wrap long lines to fix
+      autopkgtests in lib/url.c, lib/vtls/nss.c, and lib/vtls/openssl.c.
+    - debian/patches/CVE-2026-8927.patch: Fix failing test
+
+ -- Charles Cochran <charles.cochran@canonical.com>  Fri, 18 Sep 2026 11:47:53 -0400
+
 curl (7.81.0-1ubuntu1.27) jammy-security; urgency=medium
 
   * SECURITY UPDATE: Authentication Bypass in connection reuse.
